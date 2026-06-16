@@ -1,0 +1,638 @@
+/* Login0.jsx css coding start */
+.form_container{
+    height: 50%;
+    width: 40%;
+    margin: 150px auto;
+    border: 1px solid black;
+}
+/* Login0.jsx css coding end */
+
+/* AdminDashboard.jsx css coding start */
+
+/* Dashboard-navbar */
+.Dash-nav {
+    background: linear-gradient(270deg, #4f46e5, #4d2a6e);
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    color: white;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.Dash-nav h1 {
+    font-size: 32px !important;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Sidebar Toggle Buttons (Hidden on desktop) */
+.sidebar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-close {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.sidebar-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #1f2937;
+    color: white;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: auto;
+    z-index: 1002;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sidebar h2 {
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+}
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 6px;
+    transition: linear 0.2s;
+    cursor: pointer;
+}
+.sidebar a:hover {
+    background: #353e4d;
+}
+
+/* Main content */
+.main {
+    margin-left: 220px;
+    margin-top: 80px; /* Accounts for Dash-nav height */
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(180deg, #403e67, #9333ea);
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Form */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+}
+.buttons {
+    margin-top: 15px;
+    display:flex;
+    gap: 10px;
+}
+.cancel {
+    background: #496086;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.submit {
+    background: #4f46e5;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.cancel:hover { background: #6b7280; transition-duration: 0.1s;}
+.submit:hover { background: #413d65;transition-duration: 0.2s; }
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+tr:nth-child(even) {
+    background: #f9fafb;
+}
+tr:hover {
+    background: #eef2ff;
+}
+/* AdminDashboard.jsx css coding end */
+
+/* --- Mobile Responsiveness for Dashboards --- */
+@media (max-width: 768px) {
+    .Dash-nav {
+        width: 100% !important;
+        margin-left: 0 !important;
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+    
+    .Dash-nav h1 {
+        font-size: 24px !important;
+        flex-grow: 1;
+        text-align: center;
+    }
+    
+    .sidebar-toggle {
+        display: block;
+        z-index: 1000;
+    }
+    
+    .sidebar-close {
+        display: block;
+    }
+    
+    .sidebar-header {
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%);
+        width: 260px;
+        box-shadow: 4px 0 10px rgba(0,0,0,0.3);
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    .main {
+        margin-left: 0;
+        margin-top: 80px;
+        padding: 15px;
+    }
+    
+    .container-fluid {
+        overflow-x: hidden;
+    }
+}
+
+
+/* ------------------sidebar scrollbar of the results table of user dashboard -------------------- */
+
+.result-page {
+  width: 100%;
+  padding: 10px;
+}
+
+.result-card {
+  width: 100%;
+  border: 1px solid #6f42c1;
+  border-radius: 10px;
+}
+
+.result-title {
+  color: #6f42c1;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.result-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.result-table {
+  min-width: 750px;
+  font-size: 14px;
+}
+
+@media (max-width: 576px) {
+  .result-page {
+    padding: 6px;
+  }
+
+  .result-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .result-card .card-body {
+    padding: 10px;
+  }
+
+  .result-table {
+    min-width: 700px;
+    font-size: 12px;
+  }
+
+  .result-table th,
+  .result-table td {
+    padding: 6px;
+    white-space: nowrap;
+  }
+}
+
+/* examination info sidescrollbar */
+.exam-table {
+  min-width: 900px;
+  font-size: 14px;
+}
+
+.exam-table th,
+.exam-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+  .exam-table {
+    min-width: 850px;
+    font-size: 12px;
+  }
+
+  .exam-table th,
+  .exam-table td {
+    padding: 6px;
+  }
+}
+
+/* wrap the table in to side scrollbar */
+.examinee-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.examinee-table {
+  min-width: 850px;
+  font-size: 14px;
+}
+
+.examinee-table th,
+.examinee-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+  .examinee-table {
+    min-width: 800px;
+    font-size: 12px;
+  }
+
+  .examinee-table th,
+  .examinee-table td {
+    padding: 6px;
+  }
+}
+
+/* question side scrollbar responshive */
+.question-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.question-table {
+  min-width: 1000px;
+  font-size: 14px;
+}
+
+.question-table th,
+.question-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+  .question-table {
+    min-width: 950px;
+    font-size: 12px;
+  }
+
+  .question-table th,
+  .question-table td {
+    padding: 6px;
+  }
+}
+
+/* report sidescroll bar */
+.report-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.report-table {
+  min-width: 900px;
+  font-size: 14px;
+}
+
+.report-table th,
+.report-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+  .report-table {
+    min-width: 850px;
+    font-size: 12px;
+  }
+
+  .report-table th,
+  .report-table td {
+    padding: 6px;
+  }
+}
+
+/* ------------------change password page of admin css coding-------------------- */
+.change-password-page {
+  width: 100%;
+  padding: 20px 10px;
+}
+
+.change-password-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #6f42c1;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .change-password-page {
+    padding: 10px;
+  }
+
+  .change-password-card {
+    margin: 20px auto;
+    padding: 15px;
+  }
+}
+
+/*myexam user dashboard css coding */
+.myexam-card {
+  width: 100%;
+}
+
+.myexam-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.myexam-table {
+  min-width: 600px;
+  font-size: 14px;
+}
+
+.myexam-table th,
+.myexam-table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+  .myexam-table {
+    min-width: 550px;
+    font-size: 12px;
+  }
+
+  .myexam-table th,
+  .myexam-table td {
+    padding: 6px;
+  }
+}
+
+/* ------------------ Welcome selection page CSS styles -------------------- */
+.welcome-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgb(56, 194, 199) 0%, #b2c4dd 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.welcome-content {
+  margin: auto;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.welcome-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.welcome-subtitle {
+  font-size: 18px;
+  color: #4b5563;
+  margin-bottom: 40px;
+}
+
+.portal-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.portal-card {
+  background: #e6eeec;
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 320px;
+  backface-visibility: transparent;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(79, 70, 229, 0.1);
+  border-color: #a5b4fc;
+}
+
+.portal-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+}
+
+.portal-card:hover .portal-icon {
+  transform: scale(1.1);
+}
+
+.user-icon {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.admin-icon {
+  background: #fdf2f8;
+  color: #db2777;
+}
+
+.portal-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.portal-description {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.portal-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.student-btn {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.student-btn:hover {
+  background: #4338ca;
+}
+
+.admin-btn {
+  background: #374151;
+  color: #ffffff;
+}
+
+.admin-btn:hover {
+  background: #1f2937;
+}
+
+.welcome-footer {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 40px;
+}
+
+@media (max-width: 640px) {
+  .welcome-title {
+    font-size: 28px;
+  }
+  .welcome-subtitle {
+    font-size: 15px;
+  }
+  .portal-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 30px 20px;
+  }
+}
