@@ -28,7 +28,7 @@ const UserChangePassword = () => {
 
         setLoading(true);
         try {
-            const res = await axios.put(`http://localhost:5000/api/examinee/changepassword/${id}`, form);
+            const res = await axios.put(`https://exam-prep-1v8x.onrender.com/api/examinee/changepassword/${id}`, form);
             alert(res.data.message || "Password updated successfully");
             setForm({ op: '', np: '', cnp: '' });
         } catch (er) {

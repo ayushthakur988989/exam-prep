@@ -6,7 +6,7 @@ const Exam = require('../models/Examination');
 const Subject = require('../models/Subject');
 const express = require('express');
 const router = express.Router();
-const ExamAttempted = require('../models/ExamAttempted');
+const ExamAttempted = require('../models/Examattempted');
 
 router.get('/', async (req, res) => {
     try {

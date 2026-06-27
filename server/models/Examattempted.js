@@ -9,4 +9,4 @@ const ExamAttemptedSchema = new mongoose.Schema({
     resultStatus:{type:String , enum:['Pending','Completed'], default: 'Pending'},
 
 },{timestamps:true});
-module.exports= mongoose.model('ExamAttempted', ExamAttemptedSchema);
+module.exports = mongoose.models.ExamAttempted || mongoose.model('ExamAttempted', ExamAttemptedSchema);

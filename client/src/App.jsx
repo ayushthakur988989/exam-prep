@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
 // import Login0 from "./pages/Login0";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminHome from "./pages/admin/AdminHome";
 
 import AdminLogin from "./pages/AdminLogin";
 import Session from "./pages/admin/Session";
@@ -31,7 +32,7 @@ function App() {
           <Route path="/userlogin" element={<Ulogin />}></Route>
           <Route path="/adlogin" element={<AdminLogin />}></Route>
           <Route path="/admindashboard" element={<AdminDashboard />}>
-            <Route index element={<Navigate to="Session" replace />} />
+            <Route index element={<AdminHome />} />
             <Route path="Session" element={<Session />}></Route>
             <Route path="Subject" element={<Subject />}></Route>
             <Route path="adminchangepassword" element={<AdminChangePassword />}></Route>

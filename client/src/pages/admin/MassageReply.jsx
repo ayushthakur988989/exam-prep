@@ -7,7 +7,7 @@
 
 //   const fetchAll = async () => {
 //     try {
-//       const res = await axios.get('http://localhost:5000/api/message/all');
+//       const res = await axios.get('https://exam-prep-1v8x.onrender.com/api/message/all');
 //       setMessages(res.data.message || []);
 //     } catch (err) {
 //       console.error('Error fetching messages for admin:', err);
@@ -24,7 +24,7 @@
 //     const answer = (replyInputs[id] || '').trim();
 //     if (!answer) return alert('Please type a reply.');
 //     try {
-//       await axios.put(`http://localhost:5000/api/message/reply/${id}`, {
+//       await axios.put(`https://exam-prep-1v8x.onrender.com/api/message/reply/${id}`, {
 //         answer,
 //         role: 'admin'
 //       });
@@ -39,7 +39,7 @@
 //     const newReply = prompt('Edit reply:', currentReply || '');
 //     if (newReply === null) return;
 //     try {
-//       await axios.put(`http://localhost:5000/api/message/reply/${id}`, {
+//       await axios.put(`https://exam-prep-1v8x.onrender.com/api/message/reply/${id}`, {
 //         answer: newReply,
 //         role: 'admin'
 //       });
@@ -52,7 +52,7 @@
 //   const deleteByAdmin = async (id) => {
 //     if (!window.confirm('Delete this reply?')) return;
 //     try {
-//       await axios.put(`http://localhost:5000/api/message/delete/${id}, {
+//       await axios.put(`https://exam-prep-1v8x.onrender.com/api/message/delete/${id}, {
 //         role: 'admin'
 //       });
 //       fetchAll();

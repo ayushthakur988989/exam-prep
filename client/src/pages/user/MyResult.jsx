@@ -8,7 +8,7 @@ const Result = () => {
   const handlefetch = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/exams/examinee-result/${userId}`
+        `https://exam-prep-1v8x.onrender.com/api/exams/examinee-result/${userId}`
       );
 
       setData(

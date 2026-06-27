@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 
 // ─── View constants ───────────────────────────────────────────────────────────
 const VIEW_SIGNIN    = 'signin';
@@ -20,7 +20,7 @@ const AdminLogin = () => {
     e.preventDefault();
     setError(''); setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/login', signIn);
+      const res = await api.post('/api/admin/login', signIn);
       if (res.data.message === 'Login Successfully') {
         localStorage.setItem('adminEmail', res.data.admin.email);
         localStorage.setItem('id', res.data.admin.id);
@@ -45,7 +45,7 @@ const AdminLogin = () => {
     e.preventDefault();
     setError(''); setLoading(true); setDevOtp(''); setPreviewUrl('');
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/send-otp', { email: forgotEmail });
+      const res = await api.post('/api/admin/send-otp', { email: forgotEmail });
       if (res.data.message === 'OTP sent successfully') {
         // Dev mode: server returned OTP directly (Gmail not configured)
         if (res.data.otp) {
@@ -73,7 +73,7 @@ const AdminLogin = () => {
     e.preventDefault();
     setError(''); setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/verify-otp', {
+      const res = await api.post('/api/admin/verify-otp', {
         email: forgotEmail,
         otp,
       });
@@ -104,7 +104,7 @@ const AdminLogin = () => {
     }
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/admin/register', {
+      const res = await api.post('/api/admin/register', {
         name: signUp.name,
         email: signUp.email,
         password: signUp.password,

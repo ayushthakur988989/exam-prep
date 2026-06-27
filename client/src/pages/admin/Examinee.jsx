@@ -19,12 +19,12 @@ const Examinee = () => {
   }, []);
 
   const handlefetch = async () => {
-    const res = await axios.get('http://localhost:5000/api/examinee');
+    const res = await axios.get('https://exam-prep-1v8x.onrender.com/api/examinee');
     setData(res.data);
   };
 
   const handleDelete = async (id) => {
-    const res = await axios.delete(`http://localhost:5000/api/examinee/${id}`);
+    const res = await axios.delete(`https://exam-prep-1v8x.onrender.com/api/examinee/${id}`);
     if (res) {
       alert("Deleted Successfully");
     } else {
@@ -56,7 +56,7 @@ const Examinee = () => {
     e.preventDefault();
     if (!editingId) return;
     try {
-      await axios.put(`http://localhost:5000/api/examinee/${editingId}`, form);
+      await axios.put(`https://exam-prep-1v8x.onrender.com/api/examinee/${editingId}`, form);
       alert('Examinee Updated Successfully');
       setForm({
         name: '',

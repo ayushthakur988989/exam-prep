@@ -14,7 +14,7 @@
 //   const fetchUserMessages = async () => {
 //     if (!userId) return;
 //     try {
-//       const res = await axios.get(`http://localhost:3000/api/message/user/${userId});
+//       const res = await axios.get(`https://exam-prep-1v8x.onrender.com/api/message/user/${userId});
 //       setMessages(res.data.message || []);
 //     } catch (err) {
 //       console.error('❌ Error fetching user messages:', err);
@@ -33,7 +33,7 @@
 //       return alert('⚠ Please type your feedback first!');
 //     }
 //     try {
-//       await axios.post('http://localhost:3000/api/message', {
+//       await axios.post('https://exam-prep-1v8x.onrender.com/api/message', {
 //         question,
 //         examineeId: userId
 //       });
@@ -51,7 +51,7 @@
 //     const newText = prompt('Edit your message:', currentText);
 //     if (newText === null || !newText.trim()) return;
 //     try {
-//       await axios.put(http://localhost:3000/api/message/edit/${id}, {
+//       await axios.put(https://exam-prep-1v8x.onrender.com/api/message/edit/${id}, {
 //         question: newText,
 //         role: 'user',
 //         userId
@@ -68,7 +68,7 @@
 //   const deleteByUser = async (id) => {
 //     if (!window.confirm('Are you sure you want to delete this message?')) return;
 //     try {
-//       await axios.put(http://localhost:3000/api/message/delete/${id}, {
+//       await axios.put(https://exam-prep-1v8x.onrender.com/api/message/delete/${id}, {
 //         role: 'user',
 //         userId
 //       });

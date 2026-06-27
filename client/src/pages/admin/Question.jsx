@@ -26,12 +26,12 @@ const QuestionBank = () => {
     e.preventDefault();
     try {
       if (editform) {
-        const res = await axios.put(`http://localhost:5000/api/question/${id.id}`, formData);
+        const res = await axios.put(`https://exam-prep-1v8x.onrender.com/api/question/${id.id}`, formData);
         if (res) {
           alert('Question updated successfully');
         }
       } else {
-        const res = await axios.post('http://localhost:5000/api/question', formData);
+        const res = await axios.post('https://exam-prep-1v8x.onrender.com/api/question', formData);
         if (res) {
           alert('Question added successfully');
         }
@@ -56,10 +56,10 @@ const QuestionBank = () => {
   };
 
   const handlefetch = async () => {
-    const res = await axios.get('http://localhost:5000/api/question');
+    const res = await axios.get('https://exam-prep-1v8x.onrender.com/api/question');
     setData(res.data.data);
 
-    const res1 = await axios.get('http://localhost:5000/api/subject');
+    const res1 = await axios.get('https://exam-prep-1v8x.onrender.com/api/subject');
     setSubjects(res1.data);
   };
 
@@ -69,7 +69,7 @@ const QuestionBank = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/question/${id}`);
+      const res = await axios.delete(`https://exam-prep-1v8x.onrender.com/api/question/${id}`);
       if (res) {
         alert("Deleted Successfully");
         handlefetch();

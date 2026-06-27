@@ -21,11 +21,11 @@ const [edit, setEdit] =useState(null);
     e.preventDefault();
     try{
      if(edit){
- const res=await axios.put(`http://localhost:5000/api/Subject/${id.id}`,form);
+ const res=await axios.put(`https://exam-prep-1v8x.onrender.com/api/Subject/${id.id}`,form);
       alert("Updated Successfully");
      }
      else{
-       const res=await axios.post('http://localhost:5000/api/Subject',form);
+       const res=await axios.post('https://exam-prep-1v8x.onrender.com/api/Subject',form);
       alert("Added Successfully");
      }
     }
@@ -36,7 +36,7 @@ const [edit, setEdit] =useState(null);
   }
   const [data,setData] = useState([]);
   const handlefetch =async()=>{
-    const res = await axios.get('http://localhost:5000/api/Subject');
+    const res = await axios.get('https://exam-prep-1v8x.onrender.com/api/Subject');
     setData(res.data)
   }
 
@@ -46,7 +46,7 @@ const [edit, setEdit] =useState(null);
 
   const handleDelete = async(id)=>{
     try{
-      const res = await axios.delete(`http://localhost:5000/api/Subject/${id}`);
+      const res = await axios.delete(`https://exam-prep-1v8x.onrender.com/api/Subject/${id}`);
       alert("Subject Deleted Successfully")
     }
     catch(er){

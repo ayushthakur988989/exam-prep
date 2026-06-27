@@ -54,6 +54,7 @@ const AdminDashboard = () => {
               </svg>
             </button>
           </div>
+          <a href="/admindashboard" onClick={() => setIsSidebarOpen(false)}>Dashboard Overview</a>
           <a href="/admindashboard/Session" onClick={() => setIsSidebarOpen(false)}>Sessions</a>
           <a href="/admindashboard/Subject" onClick={() => setIsSidebarOpen(false)}>Subjects</a>
           <a href="/admindashboard/Examination" onClick={() => setIsSidebarOpen(false)}>Examination</a>

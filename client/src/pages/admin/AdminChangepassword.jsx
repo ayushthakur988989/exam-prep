@@ -29,7 +29,7 @@ const AdminChangePassword = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/admin/change/${id}`,
+        `https://exam-prep-1v8x.onrender.com/api/admin/change/${id}`,
         form
       );
 

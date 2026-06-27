@@ -70,7 +70,7 @@ router.post('/login', async(req,res)=>{
     const user = await Examinee.findOne({email:email});
     console.log(user)
     if(!user){
-        return res.status(400).json("user not found")
+        return res.status(400).json({message: "user not found"})
     }
     if(user.password==password){
         return res.status(200).json({message:"Login Successfully",user:{

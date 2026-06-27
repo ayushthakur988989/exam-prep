@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../../api";
 
 const VIEW_SIGNIN = 'signin';
 const VIEW_FORGOT = 'forgot';
@@ -23,7 +23,7 @@ const ULogin = () => {
     e.preventDefault();
     setError(''); setLoading(true); setSuccess('');
     try {
-      const res = await axios.post("http://localhost:5000/api/examinee/login", form);
+      const res = await api.post("/api/examinee/login", form);
       if (res.data.message === "Login Successfully") {
         setSuccess("Login Successfully");
         localStorage.setItem("userEmail", res.data.user.email);
@@ -50,7 +50,7 @@ const ULogin = () => {
     e.preventDefault();
     setError(''); setLoading(true); setDevOtp(''); setPreviewUrl(''); setSuccess('');
     try {
-      const res = await axios.post('http://localhost:5000/api/examinee/send-otp', { email: forgotEmail });
+      const res = await api.post('/api/examinee/send-otp', { email: forgotEmail });
       if (res.data.message === 'OTP sent successfully') {
         if (res.data.otp) {
           setDevOtp(res.data.otp);
@@ -77,7 +77,7 @@ const ULogin = () => {
     e.preventDefault();
     setError(''); setLoading(true); setSuccess('');
     try {
-      const res = await axios.post('http://localhost:5000/api/examinee/verify-otp', { email: forgotEmail, otp });
+      const res = await api.post('/api/examinee/verify-otp', { email: forgotEmail, otp });
       if (res.data.message === 'OTP Verified') {
         setSuccess('OTP verified! Please set a new password.');
         setView(VIEW_RESET);
@@ -103,7 +103,7 @@ const ULogin = () => {
     }
     setLoading(true);
     try {
-      const res = await axios.put('http://localhost:5000/api/examinee/reset-password', {
+      const res = await api.put('/api/examinee/reset-password', {
         email: forgotEmail,
         newPassword: resetForm.newPassword
       });
