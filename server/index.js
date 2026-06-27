@@ -14,18 +14,7 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (
-      !origin || 
-      allowedOrigins.includes(origin) || 
-      /^http:\/\/localhost:\d+$/.test(origin) ||
-      /^https:\/\/exam-prep(-[a-zA-Z0-9-]+)?\.vercel\.app$/.test(origin)
-    ) {
-      callback(null, true);
-    } else {
-      callback(null, false);
-    }
-  },
+  origin: true, // Allows all origins dynamically (great for easy deployment on Vercel/Netlify)
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
