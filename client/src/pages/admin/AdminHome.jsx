@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AdminHome = () => {
     const [data, setData] = useState({
-        totalExams: 0,
+        totalExams: 0, 
         totalExaminees: 0,
         totalSubject: 0,
         totalQuestions: 0
